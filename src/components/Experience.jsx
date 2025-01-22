@@ -3,56 +3,65 @@ const experiences = [
   {
     company: "Capital Infinity Corporation",
     position: "Desarrollador Full Stack",
-    time: "2024 - Present",
+    time: "2024 - Presente",
     projects: [
       {
-        title: "Pagina Web Corporativa",
+        title: "Página Web Corporativa",
         description:
-          "Fui responsable de la creación de la página web corporativa para Capital Infinity, utilizando tecnologías base como HTML, CSS y Vanilla JavaScript. El objetivo principal del proyecto fue reflejar la identidad profesional y moderna de la empresa, así como proporcionar una experiencia de usuario intuitiva y eficiente.",
+          "Lideré el desarrollo de la página web corporativa para Capital Infinity, utilizando tecnologías fundamentales como HTML, CSS y JavaScript Vanilla. El proyecto tuvo como objetivo principal plasmar la identidad profesional y moderna de la empresa, garantizando una experiencia de usuario intuitiva y eficiente. Mi enfoque se centró en la creación de una interfaz limpia y responsive, optimizada para una navegación fluida y accesible en todos los dispositivos.",
         links: {
           viewProject: "#",
-          docs: "#",
+          docs: "",
         },
       },
       {
         title: "Sistema de registro para clientes",
         description:
-          "Developed a fully functional blog application with user authentication and real-time commenting system using Node.js and MongoDB.",
+          "Desarrollé un sistema de registro automatizado para eventos, donde los clientes podían registrarse y recibir un código QR único que les permitía acceder al evento. Además, el sistema enviaba correos electrónicos automatizados a cada cliente con su código QR y detalles del evento. También implementé un módulo de análisis de métricas para obtener datos clave sobre los asistentes, como la cantidad de registros y la tasa de asistencia, lo que permitió una mejor toma de decisiones y seguimiento del evento.",
         links: {
           viewProject: "#",
-          docs: "#",
+          docs: "",
         },
       },
     ],
   },
   {
-    company: "Company B",
-    position: "Backend Developer",
-    time: "June 2018 - December 2019",
+    company: "Natcodee",
+    position: "Desarrollador RPA",
+    time: "Junio 2024 - En pausa",
     projects: [
       {
-        title: "Project 1: API for Mobile App",
+        title: "RPA con Python",
         description:
-          "Built RESTful APIs for a mobile application using Express.js, MongoDB, and JWT authentication.",
+          "En la primera etapa del proyecto, automatizamos un proceso repetitivo dentro de la empresa utilizando Python y Selenium, lo que permitió aumentar la eficiencia y reducir significativamente los tiempos de trabajo. Para la segunda fase, se planea integrar el script desarrollado con una API que permitirá su ejecución remota y el reenvío de datos, optimizando aún más el flujo de trabajo y facilitando la escalabilidad del sistema.",
         links: {
           viewProject: "#",
-          docs: "#",
+          docs: "",
         },
       },
     ],
   },
   {
-    company: "Company C",
-    position: "Software Engineer Intern",
-    time: "June 2017 - May 2018",
+    company: "Artitek",
+    position: "Python Developer",
+    time: "Julio 2024 - Septiembre 2024 ",
     projects: [
       {
-        title: "Project 1: Data Analysis Tool",
+        title: "Mejorar y optimizacion CI/CD",
         description:
-          "Assisted in the development of a data analysis tool that helped analyze large datasets using Python and Pandas.",
+          "En este proyecto, lideré la optimización de procesos de CI/CD, mejorando la creación de imágenes Docker para reducir el tiempo de construcción y el tamaño de las imágenes, simplificando archivos docker-compose para agilizar el despliegue de contenedores, y reestructurando repositorios en GitHub para mejorar la mantenibilidad y escalabilidad del código. Además, optimicé GitHub Actions, logrando que todos los tests se ejecuten sin observaciones y reduciendo el tiempo de ejecución del pipeline. Estas mejoras permitieron un flujo de trabajo más eficiente, reduciendo los tiempos de implementación y aumentando la confiabilidad del proceso de integración continua.",
         links: {
-          viewProject: "#",
-          docs: "#",
+          viewProject: "",
+          docs: "",
+        },
+      },
+      {
+        title: "Desarrollo y despliegue de página web",
+        description:
+          "Desarrollé una landing page completamente funcional utilizando HTML, CSS y JavaScript, asegurando un diseño responsive y una experiencia de usuario intuitiva. La página fue desplegada en Firebase, lo que permitió una implementación rápida y confiable, además de facilitar la escalabilidad y el manejo de tráfico.",
+        links: {
+          viewProject: "",
+          docs: "",
         },
       },
     ],
@@ -61,40 +70,47 @@ const experiences = [
 function Experience() {
   return (
     <div className="bg-gradient-to-b from-slate-600 via-slate-200 to-gray-900 p-10 text-black">
-      <h1 className="text-4xl font-bold text-center mb-6">Experience</h1>
+      <h1 className="text-4xl font-bold text-center mb-6">Experiencia</h1>
 
       {/* Mapear las experiencias */}
       {experiences.map((experience, index) => (
         <div key={index} className="bg-white shadow-lg rounded-lg p-6 mb-6">
           <h2 className="text-2xl font-semibold">{experience.company}</h2>
-          <p className="text-lg text-gray-700">
-            Position: {experience.position}
-          </p>
-          <p className="text-sm text-gray-500">Time: {experience.time}</p>
+          <p className="text-lg text-gray-700">Cargo: {experience.position}</p>
+          <p className="text-sm text-gray-500">Tiempo: {experience.time}</p>
 
-          <h3 className="text-xl font-semibold mt-4">Projects:</h3>
+          <h3 className="text-xl font-semibold mt-4">Proyectos:</h3>
           <ul className="list-none space-y-4 mt-2">
             {experience.projects.map((project, projectIndex) => (
               <li
                 key={projectIndex}
-                className="border-l-4 border-indigo-600 pl-4"
+                className="border-l-4 border-indigo-400 pl-4"
               >
                 <h4 className="text-lg font-semibold">{project.title}</h4>
                 <p className="text-gray-600">{project.description}</p>
                 <div className="mt-2">
-                  <a
-                    href={project.links.viewProject}
-                    className="text-indigo-600 hover:text-indigo-800 transition-colors"
-                  >
-                    View Project
-                  </a>{" "}
-                  |{" "}
-                  <a
-                    href={project.links.docs}
-                    className="text-indigo-600 hover:text-indigo-800 transition-colors"
-                  >
-                    Docs
-                  </a>
+                  {project.links.viewProject &&
+                    project.links.viewProject.trim() !== "" && ( // Verifica si viewProject no es nulo ni una cadena vacía
+                      <>
+                        <a
+                          href={project.links.viewProject}
+                          className="text-indigo-600 hover:text-indigo-800 transition-colors"
+                        >
+                          Ver proyecto
+                        </a>{" "}
+                        {" "}
+                        {/* Renderiza el separador solo si hay un enlace de docs */}
+                      </>
+                    )}
+                  {/* {project.links.docs &&
+                    project.links.docs.trim() !== "" && ( // Verifica si docs no es nulo ni una cadena vacía
+                      <a
+                        href={project.links.docs}
+                        className="text-indigo-600 hover:text-indigo-800 transition-colors"
+                      >
+                        Docs
+                      </a>
+                    )} */}
                 </div>
               </li>
             ))}
