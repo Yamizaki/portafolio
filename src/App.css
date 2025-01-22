@@ -1,0 +1,50 @@
+header{
+  background-color: black;
+}
+
+@media (min-width: 1024px) { /* lg breakpoint en Tailwind */
+  header {
+    background-image: url('./assets/bg-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+.container__technologies img{
+  width: 60px;
+  /* filter: grayscale(100%) brightness(90%); */
+  transition: .5s ease-in-out;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;  
+
+}
+.container__technologies2 img{
+  width: 50px;
+  /* filter: grayscale(100%) brightness(90%);
+  transition: .5s ease-in-out;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;   */
+
+}
+
+
+.container__technologies img:hover{
+  /* filter: grayscale(0%) brightness(100%); */
+  animation: zoom 1s  alternate  infinite;
+}
+@keyframes zoom {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
