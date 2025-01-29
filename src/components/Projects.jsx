@@ -2,8 +2,17 @@ import React from "react";
 import proyectoReact from "../assets/proyecto-react.jpg";
 import lalenas from "../assets/lalenas.png";
 import djangopsql from "../assets/proyecto-dj-psql.jpg";
+import scriptLimpieza from "../assets/script-limpieza.jpg";
 function Projects() {
   const projects = [
+    {
+      title: "Limpieza de archivos temporales en Windows",
+      description:
+        "Este script en Python se encarga de eliminar el contenido de carpetas temporales en un sistema Windows sin borrar las carpetas principales. También puede solicitar permisos de administrador si es necesario.",
+      image: scriptLimpieza, // Reemplaza con la URL de tu imagen
+      codeLink:
+        "https://github.com/Yamizaki/scritps/tree/master", // Reemplaza con el enlace al código
+    },
     {
       title: "Todo app",
       description:
@@ -29,6 +38,7 @@ function Projects() {
         "https://github.com/Yamizaki/Sistema-de-Registro-de-Pacientes-REACT", // Reemplaza con el enlace al código
       demoLink: "https://legendary-hamster-48f8c1.netlify.app/", // Reemplaza con el enlace al proyecto desplegado
     },
+    
   ];
 
   return (
@@ -46,7 +56,7 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover p-3  bg-slate-500"
+                className="w-full h-56  p-2  bg-slate-500"
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-2">
