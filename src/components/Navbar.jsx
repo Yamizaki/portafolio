@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <>
       <nav className="flex justify-between items-center  p-12">
-        <h1 className="font-bold text-4xl">DESIGNER</h1>
+        <h1 className="title__color__nav">DESIGNER</h1>
 
         {/* Menú de escritorio, siempre visible */}
         <ul className="gap-20 hidden lg:flex">

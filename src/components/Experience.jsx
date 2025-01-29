@@ -10,7 +10,7 @@ const experiences = [
         description:
           "Lideré el desarrollo de la página web corporativa para Capital Infinity, utilizando tecnologías fundamentales como HTML, CSS y JavaScript Vanilla. El proyecto tuvo como objetivo principal plasmar la identidad profesional y moderna de la empresa, garantizando una experiencia de usuario intuitiva y eficiente. Mi enfoque se centró en la creación de una interfaz limpia y responsive, optimizada para una navegación fluida y accesible en todos los dispositivos.",
         links: {
-          viewProject: "#",
+          viewProject: "https://capitalinfinity.com/",
           docs: "",
         },
       },
@@ -19,7 +19,16 @@ const experiences = [
         description:
           "Desarrollé un sistema de registro automatizado para eventos, donde los clientes podían registrarse y recibir un código QR único que les permitía acceder al evento. Además, el sistema enviaba correos electrónicos automatizados a cada cliente con su código QR y detalles del evento. También implementé un módulo de análisis de métricas para obtener datos clave sobre los asistentes, como la cantidad de registros y la tasa de asistencia, lo que permitió una mejor toma de decisiones y seguimiento del evento.",
         links: {
-          viewProject: "#",
+          viewProject: "https://experiencia-infinity.onrender.com/",
+          docs: "",
+        },
+      },
+      {
+        title: "Mantenimiento de página web",
+        description:
+          "Realicé el mantenimiento de la página web corporativa de SeInfinity, un proyecto basado en WordPress. Para ello, implementé modificaciones en componentes y funciones que no estaban disponibles por defecto en los plugins, asegurando un mejor rendimiento y personalización del sitio.",
+        links: {
+          viewProject: "https://seinfinity.org/",
           docs: "",
         },
       },
@@ -35,7 +44,7 @@ const experiences = [
         description:
           "En la primera etapa del proyecto, automatizamos un proceso repetitivo dentro de la empresa utilizando Python y Selenium, lo que permitió aumentar la eficiencia y reducir significativamente los tiempos de trabajo. Para la segunda fase, se planea integrar el script desarrollado con una API que permitirá su ejecución remota y el reenvío de datos, optimizando aún más el flujo de trabajo y facilitando la escalabilidad del sistema.",
         links: {
-          viewProject: "#",
+          viewProject: "https://www.linkedin.com/posts/yamizaki-arakaki-a24580267_python-automation-selenium-activity-7199094399895502850-Nj52?utm_source=share&utm_medium=member_desktop",
           docs: "",
         },
       },
@@ -49,7 +58,7 @@ const experiences = [
       {
         title: "Mejorar y optimizacion CI/CD",
         description:
-          "En este proyecto, lideré la optimización de procesos de CI/CD, mejorando la creación de imágenes Docker para reducir el tiempo de construcción y el tamaño de las imágenes, simplificando archivos docker-compose para agilizar el despliegue de contenedores, y reestructurando repositorios en GitHub para mejorar la mantenibilidad y escalabilidad del código. Además, optimicé GitHub Actions, logrando que todos los tests se ejecuten sin observaciones y reduciendo el tiempo de ejecución del pipeline. Estas mejoras permitieron un flujo de trabajo más eficiente, reduciendo los tiempos de implementación y aumentando la confiabilidad del proceso de integración continua.",
+          "En este proyecto, participé en la optimización de procesos de CI/CD, mejorando la creación de imágenes Docker para reducir el tiempo de construcción y el tamaño de las imágenes, simplificando archivos docker-compose para agilizar el despliegue de contenedores, y reestructurando repositorios en GitHub para mejorar la mantenibilidad y escalabilidad del código. Además, optimicé GitHub Actions, logrando que todos los tests se ejecuten sin observaciones y reduciendo el tiempo de ejecución del pipeline. Estas mejoras permitieron un flujo de trabajo más eficiente, reduciendo los tiempos de implementación y aumentando la confiabilidad del proceso de integración continua.",
         links: {
           viewProject: "",
           docs: "",
@@ -60,8 +69,8 @@ const experiences = [
         description:
           "Desarrollé una landing page completamente funcional utilizando HTML, CSS y JavaScript, asegurando un diseño responsive y una experiencia de usuario intuitiva. La página fue desplegada en Firebase, lo que permitió una implementación rápida y confiable, además de facilitar la escalabilidad y el manejo de tráfico.",
         links: {
-          viewProject: "",
-          docs: "",
+          viewProject: "https://peaceful-unicorn-293d15.netlify.app/",
+          docs: "https://github.com/Yamizaki/aritek-datathon",
         },
       },
     ],
@@ -69,15 +78,15 @@ const experiences = [
 ];
 function Experience() {
   return (
-    <div className="bg-gradient-to-b from-slate-600 via-slate-200 to-gray-900 p-10 text-black">
-      <h1 className="text-4xl font-bold text-center mb-6">Experiencia</h1>
+    <div className="bg-gradient-to-b from-slate-600 via-slate-200 to-gray-600 p-10 text-black">
+      <h1 className="title__color">Experiencia</h1>
 
       {/* Mapear las experiencias */}
       {experiences.map((experience, index) => (
-        <div key={index} className="bg-white shadow-lg rounded-lg p-6 mb-6">
+        <div key={index} className="backdrop-blur-md bg-slate-300 bg-opacity-30 shadow-lg rounded-lg p-6 mb-6">
           <h2 className="text-2xl font-semibold">{experience.company}</h2>
-          <p className="text-lg text-gray-700">Cargo: {experience.position}</p>
-          <p className="text-sm text-gray-500">Tiempo: {experience.time}</p>
+          <p className="text-lg ">Cargo: {experience.position}</p>
+          <p className="text-sm ">Tiempo: {experience.time}</p>
 
           <h3 className="text-xl font-semibold mt-4">Proyectos:</h3>
           <ul className="list-none space-y-4 mt-2">
@@ -87,7 +96,7 @@ function Experience() {
                 className="border-l-4 border-indigo-400 pl-4"
               >
                 <h4 className="text-lg font-semibold">{project.title}</h4>
-                <p className="text-gray-600">{project.description}</p>
+                <p className="">{project.description}</p>
                 <div className="mt-2">
                   {project.links.viewProject &&
                     project.links.viewProject.trim() !== "" && ( // Verifica si viewProject no es nulo ni una cadena vacía
@@ -95,6 +104,7 @@ function Experience() {
                         <a
                           href={project.links.viewProject}
                           className="text-indigo-600 hover:text-indigo-800 transition-colors"
+                          target="_blank"
                         >
                           Ver proyecto
                         </a>{" "}

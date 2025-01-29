@@ -2,10 +2,10 @@ import React from "react";
 import userPhoto from "../assets/user.jpg";
 function About() {
   return (
-<div className="flex flex-wrap items-center bg-gradient-to-b from-black via-slate-800 to-slate-600 lg:p-20 p-10 text-white">
+<div className="flex flex-wrap jus items-center bg-gradient-to-b from-black via-slate-800 to-slate-600 lg:p-20 p-10 text-white">
   {/* Sección de Texto */}
   <div className="lg:flex-1 lg:mx-20 mx-5">
-    <h1 className="text-5xl font-bold mb-6">About Me</h1>
+    <h1 className="title__color">Sobre mí</h1>
     <p className="text-lg leading-relaxed mb-8">
       Soy <strong>Yamizaki Arakaki Chávez</strong>, un profesional comprometido con la
       excelencia y la innovación tecnológica. Mi enfoque no solo está en el
